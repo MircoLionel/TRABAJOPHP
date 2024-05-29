@@ -61,7 +61,7 @@
     </form>
     
     <?php
-        include ("header.php");
+        include (funciones.php);
     ?>
 
 </div>

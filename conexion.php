@@ -1,8 +1,8 @@
 <?php
-$servidor = "localhost"; // Cambia esto si tu base de datos está en un servidor remoto
+$servidor = "localhost"; 
 $usuario = "root";
 $contrasena = "";
-$basededatos = "escuela";
+$basededatos = "educativos";
 
 
 $conexion = mysqli_connect($servidor, $usuario, $contrasena, $basededatos);
