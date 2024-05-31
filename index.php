@@ -3,65 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro Rutas</title>
+    <title>loguin</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <?php include 'funciones.php';
     ?>
 </head>
+
+
 <body>
-    <div class="container mt-5">
-        <h1>Registro individual de pasajero</h1>
-        <form method="post">
-            <div class="mb-3">
-                <label for="nombreEscuela" class="form-label">Nombre de Escuela</label>
-                <input type="text" class="form-control" name="nombreEscuela" required>
-            </div>
-            <div class="mb-3">
-                <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control" name="nombre" required>
-            </div>
-            <div class="mb-3">
-                <label for="apellido" class="form-label">Apellido</label>
-                <input type="text" class="form-control" name="apellido" required>
-            </div>
-            <div class="mb-3">
-                <label for="dni" class="form-label">Documento nacional de identidad</label>
-                <input type="number" class="form-control" name="dni" required>
-            </div>
-            <div class="mb-3">
-                <label for="fecDeNac" class="form-label">Fecha de nacimiento</label>
-                <input type="date" class="form-control" name="fecDeNac" required>
-            </div>
-            <div class="mb-3">
-                <label for="grado" class="form-label">Grado</label>
-                <input type="number" class="form-control" name="grado" required>
+<div class="container w-10 bg-secondary mt-5 rounded shadow">
+    <div class="">
+        <div class="col bg d-none d-lg-block col-md-3 col-lg-3 col-xl-6 rounded">
+        </div>
+        <div class="col bg-grey p-5 rounded-end">
+            <div class="text-end">
+            <img src="" width="48">
             </div>
 
-            <div class="mb-3">
-                <label for="turno" class="form-label">Turno</label>
-                <input type="text" class="form-control" name="turno" required>
-            </div>
-                <div class="mb-3">
-                    <p>Nombre docente</p>
-                    <select class="form-select form-select-lg"name="Docente" name="docente">Docente a cargo
-                        <option value="1">Roxana</option>
-                        <option value="2">Marilu</option>
-                        <option value="3">Valeria</option>
-                        <option value="4">Cintia</option>
-                        <option value="5">Norma</option>
-                    </select required>
+            <h2 class="fw-bold text-center py-5">Bienvenido</h2>
+    <!--login-->
+            <form id="loguin" name="loguin" method="post" action ="index.php">
+                <div class="mb-4">
+                    <label for="usuario" class="form-label">Usuario</label>
+                    <input type="text" maxlength="10" name="usuario" class="form-control" id="campo_usuario" autofocus>
                 </div>
-           
-            
-        </div>
-        <button type="submit"method="post" name="check1"class="btn btn-primary">Enviar</button>
-    </form>
-    
-   
+                <div class="mb-4">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" maxlength="8" name="clave" class="form-control" id="password">
+                </div>
+                <div class="d-grid mb-3">
+                    <input type="submit" value="Iniciar sesion" name="enviar" class="btn btn-primary" />  
+                </div>
+                <div class="d-grid">
+                    <input type="reset" value="Borrar" class="btn btn-dark" /> 
+                </div>
+                <div class="my-3"><span>no tienes cuenta?<a href="#">registrate</a></span></div>
+
+                	    <?php
+                	    	if (isset($_POST["enviar"])) {  
+                	    		include ("conexion.php");
+                	    		$usu = $_POST['usuario'];
+                	    		$cla = $_POST['clave'];
+                	    		$consulta = "SELECT * FROM usuarios WHERE usuario='$usu' AND clave='$cla'" ;
+                	    		$resultado = mysqli_query($conexion, $consulta);
+                	    		$cantFilas = mysqli_num_rows($resultado);
+                	    		if ($cantFilas == 1) {
+                	    			session_start();   
+                	    			$_SESSION["logueado"] = $usu; 
+                	    			header("location:principal.php");
+                	    		} else {
+                	    			echo "<H4 id='errorLoguin'> Usuario y Clave no existen o no coinciden </H4>" ;
+                	    		}
+                	    		mysqli_close($conexion);
+                	    	}
+                	    ?>
+            </form>
+        </div>   
+    </div>
 
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
