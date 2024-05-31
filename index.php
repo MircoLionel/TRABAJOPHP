@@ -6,14 +6,15 @@
     <title>loguin</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <?php include 'funciones.php';
+    <?php include 'funciones.php'; 
     ?>
+    
 </head>
 
 
 <body>
-<div class="container w-10 bg-secondary mt-5 rounded shadow">
-    <div class="">
+<div class="container w-25 bg-secondary rounded shadow">
+    <div class="row align-items-strech">
         <div class="col bg d-none d-lg-block col-md-3 col-lg-3 col-xl-6 rounded">
         </div>
         <div class="col bg-grey p-5 rounded-end">
@@ -29,35 +30,18 @@
                     <input type="text" maxlength="10" name="usuario" class="form-control" id="campo_usuario" autofocus>
                 </div>
                 <div class="mb-4">
-                    <label for="password" class="form-label">Contraseña</label>
-                    <input type="password" maxlength="8" name="clave" class="form-control" id="password">
+                    <label for="clave" class="form-label">Contraseña</label>
+                    <input type="password" maxlength="20" name="clave" class="form-control" id="clave">
                 </div>
                 <div class="d-grid mb-3">
-                    <input type="submit" value="Iniciar sesion" name="enviar" class="btn btn-primary" />  
+                    <input type="submit" value="Iniciar sesion" name="enviar" class="btn btn-primary" action="registroInd.php" />  
                 </div>
                 <div class="d-grid">
                     <input type="reset" value="Borrar" class="btn btn-dark" /> 
                 </div>
-                <div class="my-3"><span>no tienes cuenta?<a href="#">registrate</a></span></div>
+                <div class="my-3"><span>no tienes cuenta?<a href="singup.php">registrate</a></span></div>
 
-                	    <?php
-                	    	if (isset($_POST["enviar"])) {  
-                	    		include ("conexion.php");
-                	    		$usu = $_POST['usuario'];
-                	    		$cla = $_POST['clave'];
-                	    		$consulta = "SELECT * FROM usuarios WHERE usuario='$usu' AND clave='$cla'" ;
-                	    		$resultado = mysqli_query($conexion, $consulta);
-                	    		$cantFilas = mysqli_num_rows($resultado);
-                	    		if ($cantFilas == 1) {
-                	    			session_start();   
-                	    			$_SESSION["logueado"] = $usu; 
-                	    			header("location:principal.php");
-                	    		} else {
-                	    			echo "<H4 id='errorLoguin'> Usuario y Clave no existen o no coinciden </H4>" ;
-                	    		}
-                	    		mysqli_close($conexion);
-                	    	}
-                	    ?>
+                	    
             </form>
         </div>   
     </div>
