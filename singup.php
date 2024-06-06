@@ -29,7 +29,7 @@
                 </div>
                 <div class="mb-4">
                     <label for="clave" class="form-label">Contraseña</label>
-                    <input type="clave" maxlength="20" name="clave" class="form-control" id="clave" require>
+                    <input type="password" maxlength="20" name="clave" class="form-control" id="clave" require>
                 </div>
                 <div class="mb-4">
                     <label for="e-mail" class="form-label">E-mail</label>

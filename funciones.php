@@ -42,20 +42,4 @@ if (isset($_POST['check2'])) {
 
 
 
-if (isset($_POST["enviar"])) {  
-	include ("conexion.php");
-	$usu = $_POST['usuario'];
-	$cla = $_POST['clave'];
-	$consulta = "SELECT * FROM usuarios WHERE usuario='$usu' AND clave='$cla'" ;
-	$resultado = mysqli_query($conexion, $consulta);
-	$cantFilas = mysqli_num_rows($resultado);
-	if ($cantFilas == 1) {
-		session_start();   
-		$_SESSION["logueado"] = $usu; 
-		header("location:principal.php");
-	} else {
-		echo "<H4 id='errorLoguin'> Usuario y Clave no existen o no coinciden </H4>" ;
-	}
-	mysqli_close($conexion);
-}
 ?>

@@ -1,3 +1,22 @@
+<?php
+    require 'conexion.php';
+    
+    if (!empty($_POST['usuario']) && ($_POST['clave'])) {
+        $records = $conexion->prepare('SELECT usuario,clave FROM usuarios WHERE usuario = :usuario');
+        $records->bindParam(':usuario', $_POST['usuario']);
+        $records->execute();
+        $results = $recors->fetch(PDO::FETCH_ASSOC);
+        $mesagge= '';
+
+    
+        if (count($results) > 0 && password_verify($_POST['clave'], $results['clave']));
+            $_SESSION['user_id'] =$results ['id'];
+            header('<location:>registroInd.php?');
+            } else {
+                $mesagge = 'Usuario o contraseña incorrectos';
+            }
+    
+    ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,8 +25,7 @@
     <title>loguin</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <?php include 'funciones.php'; 
-    ?>
+
     
 </head>
 
@@ -33,13 +51,14 @@
                     <label for="clave" class="form-label">Contraseña</label>
                     <input type="password" maxlength="20" name="clave" class="form-control" id="clave">
                 </div>
+                
                 <div class="d-grid mb-3">
                     <input type="submit" value="Iniciar sesion" name="enviar" class="btn btn-primary" action="registroInd.php" />  
                 </div>
                 <div class="d-grid">
                     <input type="reset" value="Borrar" class="btn btn-dark" /> 
                 </div>
-                <div class="my-3"><span>no tienes cuenta?<a href="singup.php">registrate</a></span></div>
+                <div class="my-3"> Nueva cuenta  <span><a href="singup.php">registrate</a></span></div>
 
                 	    
             </form>
