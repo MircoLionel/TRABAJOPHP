@@ -1,22 +1,7 @@
 <?php
     require 'conexion.php';
     
-    if (!empty($_POST['usuario']) && ($_POST['clave'])) {
-        $records = $conexion->prepare('SELECT usuario,clave FROM usuarios WHERE usuario = :usuario');
-        $records->bindParam(':usuario', $_POST['usuario']);
-        $records->execute();
-        $results = $recors->fetch(PDO::FETCH_ASSOC);
-        $mesagge= '';
-
-    
-        if (count($results) > 0 && password_verify($_POST['clave'], $results['clave']));
-            $_SESSION['user_id'] =$results ['id'];
-            header('<location:>registroInd.php?');
-            } else {
-                $mesagge = 'Usuario o contraseña incorrectos';
-            }
-    
-    ?>
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -41,7 +26,9 @@
             </div>
 
             <h2 class="fw-bold text-center py-5">Bienvenido</h2>
-    <!--login-->
+    
+
+            
             <form id="loguin" name="loguin" method="post" action ="index.php">
                 <div class="mb-4">
                     <label for="usuario" class="form-label">Usuario</label>
