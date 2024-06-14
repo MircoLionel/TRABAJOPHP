@@ -21,7 +21,7 @@
             <div class="caja__trasera">
                 <div class="caja__trasera-login">
                     <h3>¿Ya tenes cuenta?</h3>
-                    <p>Inicia secion</p>
+                    <p>Inicia sesion</p>
                     <button id="ini">Iniciar sesion</button>
                 </div>
                 <div class="caja__trasera-register">
@@ -40,7 +40,7 @@
                     <button>Entrar</button>
                 </form>
                 <form action="" class="formulario__register">
-                    <h2>registrarse</h2>
+                    <h2>Registrarse</h2>
                     <input type="text" placeholder="Usuario">
                     <input type="email" placeholder="Correo Electronico">
                     <input type="password" placeholder="Contraseña">
