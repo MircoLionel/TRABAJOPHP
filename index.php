@@ -1,5 +1,5 @@
 <?php
-    require 'conexion.php';
+    include 'funciones.php';
     
 ?>
 <!DOCTYPE html>
@@ -33,18 +33,18 @@
 
 
             <div class="formulario__login-register">
-                <form action="" class="formulario__login">
+                <form action="registroInd.php" class="formulario__login">
                     <h2>Iniciar sesion</h2>
-                    <input type="text" placeholder="Usuario">
-                    <input type="password" placeholder="Contraseña">
+                    <input type="text" placeholder="Usuario" maxlength="10" require autofocus>
+                    <input type="password" placeholder="Contraseña" maxlength="8"require>
                     <button>Entrar</button>
                 </form>
-                <form action="" class="formulario__register">
+                <form id="loguin" name="loguin" method="post" action ="index.php" class="formulario__register" >
                     <h2>Registrarse</h2>
-                    <input type="text" placeholder="Usuario">
-                    <input type="email" placeholder="Correo Electronico">
-                    <input type="password" placeholder="Contraseña">
-                    <button>Registrarse</button>
+                    <input type="text" placeholder="Usuario" name="usuario" maxlength="10" autofocus require>
+                    <input type="email" placeholder="Correo Electronico" name="email" maxlength="40" require>
+                    <input type="password" placeholder="Contraseña" name="clave"maxlength="10" require>
+                    <button name="check2">Registrarse</button>
                 </form>
             </div>
 
