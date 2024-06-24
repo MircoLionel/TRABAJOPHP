@@ -10,39 +10,39 @@
     ?>
 </head>
 <body>
-    <div class="container mt-5">
+    <div class="c">
         <h1>Registro individual de pasajero</h1>
         <form method="post">
-            <div class="mb-3">
+            <div class="s">
                 <label for="nombreEscuela" class="form-label">Nombre de Escuela</label>
                 <input type="text" class="form-control" name="nombreEscuela" required>
             </div>
-            <div class="mb-3">
+            <div class="s">
                 <label for="nombre" class="form-label">Nombre</label>
                 <input type="text" class="form-control" name="nombre" required>
             </div>
-            <div class="mb-3">
+            <div class="s">
                 <label for="apellido" class="form-label">Apellido</label>
                 <input type="text" class="form-control" name="apellido" required>
             </div>
-            <div class="mb-3">
+            <div class="s">
                 <label for="dni" class="form-label">Documento nacional de identidad</label>
                 <input type="number" class="form-control" name="dni" required>
             </div>
-            <div class="mb-3">
+            <div class="s">
                 <label for="fecDeNac" class="form-label">Fecha de nacimiento</label>
                 <input type="date" class="form-control" name="fecDeNac" required>
             </div>
-            <div class="mb-3">
+            <div class="s">
                 <label for="grado" class="form-label">Grado</label>
                 <input type="number" class="form-control" name="grado" required>
             </div>
 
-            <div class="mb-3">
+            <div class="s">
                 <label for="turno" class="form-label">Turno</label>
                 <input type="text" class="form-control" name="turno" required>
             </div>
-                <div class="mb-3">
+                <div class="s">
                     <p>Nombre docente</p>
                     <select class="form-select form-select-lg"name="Docente" name="docente">Docente a cargo
                         <option value="1">Roxana</option>

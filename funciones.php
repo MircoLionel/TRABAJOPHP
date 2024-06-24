@@ -2,6 +2,12 @@
 include 'conexion.php';
 
 
+
+
+
+
+
+
 if (isset($_POST['check1'])) {
     $nombreEscuela = trim($_POST['nombreEscuela']);
     $nombre = trim($_POST['nombre']);
@@ -57,7 +63,7 @@ if (isset($_POST['check2'])) {
     $resultado = mysqli_query($conexion, $registrar);
     if($resultado){
         echo '<script>alert("Usuario registrado exitosamente");
-                window.location ="registroInd.php";
+                window.location ="usuarios.php";
                 </script>
                 ';
     } else {
@@ -66,9 +72,6 @@ if (isset($_POST['check2'])) {
     mysqli_close($conexion);
 }
 
-
-
-
-
-
 ?>
+
+

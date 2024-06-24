@@ -19,6 +19,12 @@ main {
   margin: auto;
   margin-top: 100px;
 }
+.c {
+ max-width: 700px;
+ max-height: 700px;
+ margin: auto;
+ position: absolute;
+}
 
 .contenedor__todo{
   width: 100%;

@@ -1,5 +1,6 @@
 <?php
     include 'funciones.php';
+
     
 ?>
 <!DOCTYPE html>
@@ -33,10 +34,10 @@
 
 
             <div class="formulario__login-register">
-                <form action="registroInd.php" class="formulario__login">
+                <form action="start.php" method="post"  class="formulario__login">
                     <h2>Iniciar sesion</h2>
-                    <input type="text" placeholder="Usuario" maxlength="10" require autofocus>
-                    <input type="password" placeholder="Contraseña" maxlength="8"require>
+                    <input type="text" name="usuario" placeholder="Usuario" maxlength="10" require autofocus>
+                    <input type="password" name="contraseña" placeholder="Contraseña" maxlength="8"require>
                     <button>Entrar</button>
                 </form>
                 <form id="loguin" name="loguin" method="post" action ="index.php" class="formulario__register" >
