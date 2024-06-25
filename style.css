@@ -172,18 +172,19 @@ main {
   width: 330px;
   position: relative;
   height: 400px;
-  background-color: darkgray;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
   margin: 10px 10px;
   padding: 10px 15px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0.5px 10px #e6e6e6;
+  box-shadow: 0.5px 10px ;
   transition: 0.5s ease-in-out;
   margin-top: 5%;
 }
 .container .card:hover{
   transform: translateY(-10px);
-  box-shadow: 0.5px 10px #e6e6e6;
+  box-shadow: 0.5px 10px;
   transition: 0.2s ease-in-out;
   cursor: pointer;
 }
@@ -200,6 +201,7 @@ main {
   border-radius: 10px;
 }
 
+
 .insc{
   background-image: url(img/gettyimages-474690025-2048x2048.jpg);
   background-size: cover;
@@ -214,4 +216,23 @@ main {
   border-radius: 10px;
   box-shadow: 0 5px 10px -5px rgba(0,0,0,0.2);
   backdrop-filter: blur(10px);
+}
+.inscc{
+  background-image: url(img/pencils-1486278_1280.jpg);
+  background-size: cover;
+  min-height: 100vh
+}
+.formm{
+  color: whitesmoke;
+  background-color: transparent;
+  margin: auto;
+  width: 90%;
+  max-width: 400px;
+  padding: 4.5em 3em;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px -5px rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px);
+}
+.formm input{
+  background:gray
 }

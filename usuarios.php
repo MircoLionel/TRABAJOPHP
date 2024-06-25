@@ -25,7 +25,7 @@
     <div class="container">
         <div class="card">
             <div class="imgbx">
-                <a href="">
+                <a href="docentes.php">
                     <img src="img\teacher.png" alt="imagen docente">
                 </a>
                 <h2>Soy docente </h2>
@@ -36,7 +36,7 @@
     <div class="container">
         <div class="card">
             <div class="imgbx">
-                <a href="">
+                <a href="admin.php">
                     <img src="img\1803671.png" alt="imagen desarrollador">
                 </a>
                 <h2>Administrador</h2>
