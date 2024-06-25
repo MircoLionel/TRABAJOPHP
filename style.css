@@ -236,3 +236,19 @@ main {
 .formm input{
   background:gray
 }
+.insccc{
+  background-image: url(img/pencils-1486278_1280.jpg);
+  background-size: cover;
+  min-height: 100vh
+}
+.formmm{
+  color: whitesmoke;
+  background-color: transparent;
+  margin: auto;
+  width: 90%;
+  max-width: 400px;
+  padding: 4.5em 3em;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px -5px rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px);
+}

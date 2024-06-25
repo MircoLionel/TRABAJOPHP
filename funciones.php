@@ -71,7 +71,25 @@ if (isset($_POST['check2'])) {
     }
     mysqli_close($conexion);
 }
-
+if (isset($_POST['checkDoc'])) {
+    $nombreEscuelaDoc = trim($_POST['nombreEscuelaDoc']);
+    $nombreDoc = trim($_POST['nombreDoc']);
+    $apellidoDoc = trim( $_POST['apellidoDoc']);
+    $dniDoc = trim($_POST['dniDoc']);
+    $fecDeNacDoc = $_POST['fecDeNacDoc'];
+    $fecDeReg= date("Y-m-d");
+    $regDoc = "INSERT docentes(nombreDocente, apellidoDocentes, ColegioDocente, dniDoc, fecDeNacDoc, fecDeRegDoc) VALUES ('$nombreDoc','$apellidoDoc','$nombreEscuelaDoc','$dniDoc','$fecDeNacDoc','$fecDeReg')";
+    $resultadoDoc = mysqli_query($conexion, $regDoc);
+   if($resultadoDoc){
+        ?>
+        <h3 class ="ok">exito</h3>
+        <?php
+    } else {
+        ?>
+        <h3 class ="error">error</h3>
+        <?php
+    }      
+}   
 ?>
 
 

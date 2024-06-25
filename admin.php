@@ -10,19 +10,38 @@
     ?>
 </head>
 
-<body class="administrador">
-<h1 class="text-center p-30">CONTROL DE DATOS</h1>    
+<body>
+    
 
-<div class="formularioadmin">
-                <form action="start.php" method="post"  class="formulario__login">
-                    <h2>Iniciar sesion</h2>
-                    <input type="text" name="usuario" placeholder="Usuario" maxlength="10" require autofocus>
-                    <input type="password" name="contraseña" placeholder="Contraseña" maxlength="8"require>
-                    <button>Entrar</button>
-                </form>
-</div>
-
-
+<div class="insccc">
+        
+        <form class="formmm" method="post">
+        <h1>Formulario Administracion</h1>
+                    <div class="form__group">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" name="nombre" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="apellido" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" name="apellido" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="dni" class="form-label">Documento nacional de identidad</label>
+                        <input type="number" class="form-control" name="dni" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="fecDeNac" class="form-label">Fecha de nacimiento</label>
+                        <input type="date" class="form-control" name="fecDeNac" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="nombreEscuela" class="form-label">Nombre de Escuela</label>
+                        <input type="text" class="form-control" name="nombreEscuela" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+            
+            
+        </form>
+    </div>
 
 
 </body>
