@@ -82,14 +82,17 @@ if (isset($_POST['checkDoc'])) {
     $resultadoDoc = mysqli_query($conexion, $regDoc);
    if($resultadoDoc){
         ?>
-        <h3 class ="ok">exito</h3>
+        echo '<div class="alert alert-success">Registro exitoso</div>';
         <?php
     } else {
         ?>
-        <h3 class ="error">error</h3>
+        echo '<div class="alert alert-danger">Error al registrar</div>';
         <?php
     }      
-}   
+}
+
+
+
 ?>
 
 

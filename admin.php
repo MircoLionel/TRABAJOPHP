@@ -16,32 +16,32 @@
 
     <div class="insccc">
 
-            <form class="formmm" method="post">
-                <h1>Formulario Administracion</h1>
-                        <div class="form__group">
-                            <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" name="nombre" required>
-                        </div>
-                        <div class="form__group">
-                            <label for="apellido" class="form-label">Apellido</label>
-                            <input type="text" class="form-control" name="apellido" required>
-                        </div>
-                        <div class="form__group">
-                            <label for="dni" class="form-label">Documento nacional de identidad</label>
-                            <input type="number" class="form-control" name="dni" required>
-                        </div>
-                        <div class="form__group">
-                            <label for="fecDeNac" class="form-label">Fecha de nacimiento</label>
-                            <input type="date" class="form-control" name="fecDeNac" required>
-                        </div>
-                        <div class="form__group">
-                            <label for="nombreEscuela" class="form-label">Nombre de Escuela</label>
-                            <input type="text" class="form-control" name="nombreEscuela" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Enviar</button>
-
-
-            </form>
+    <form class="formmm" method="post">
+        <h1>Formulario Administrador</h1>
+                    <div class="form__group">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" name="nombreDoc" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="apellido" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" name="apellidoDoc" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="dni" class="form-label">Documento nacional de identidad</label>
+                        <input type="number" class="form-control" name="dniDoc" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="fecDeNac" class="form-label">Fecha de nacimiento</label>
+                        <input type="date" class="form-control" name="fecDeNacDoc" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="nombreEscuela" class="form-label">Nombre de Escuela</label>
+                        <input type="text" class="form-control" name="nombreEscuelaDoc" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" name="checkDoc">Enviar</button>
+            
+            
+        </form>
     </div>
     <div class="tabla">
         <div class="col-8 p-3">
@@ -59,34 +59,31 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <?php include 'conexion.php';
-                $SQL->query("SELECT * FROM docentes WHERE")
-                
-                while($datosDoc = $SQL->fetchobject())
+                  <?php
+                   include 'conexion.php';
+                    $SQL=$conexion->query(" select * from  docentes ");   
+                    while($datosDoc = $SQL->fetch_object()){ ?>
+                  
+
+                  <tr>
+                      <td><?=$datosDoc->idDocente?></td>
+                      <td><?=$datosDoc->nombreDocente?></td>
+                      <td><?=$datosDoc->apellidoDocentes?></td>
+                      <td><?=$datosDoc->dniDoc?></td>
+                      <td><?=$datosDoc->FecDeNacDoc?></td>
+                      <td><?=$datosDoc->ColegioDocente?></td>
+                      <td>
+                          <a href="edit.php?id=<?= $datosDoc->idDocente ?>"class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                          <a href=""class="btn btn-danger"><i class="fa-solid fa-xmark"></i></a>
+                      </td>
+                  </tr>
+          
+
+
+                <?php
+                }
                   ?>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>121</td>
-                    <td>112</td>
-                    <td>
-                        <a href=""class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-                        <a href=""class="btn btn-danger"><i class="fa-solid fa-xmark"></i></a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
+                 
                 </tbody>
             </table>
 
